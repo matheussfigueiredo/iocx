@@ -1,20 +1,28 @@
 {
   "name": "iocx",
   "version": "0.1.0",
-  "description": "",
-  "workspaces": [
-    "packages/*"
-  ],
-  "scripts": {
-    "build": "swc src -d dist --copy-files --strip-leading-paths --delete-dir-on-start --ignore */.{spec,test}.ts"
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "publishConfig": {
+    "access": "public"
   },
+  "scripts": {
+    "lint": "eslint src/**/*.ts",
+    "build": "swc src -d dist --copy-files --strip-leading-paths --delete-dir-on-start --ignore */.{spec,test}.ts",
+    "deploy": "npm version patch && npm publish --access public"
+  },
+  "license": "MIT",
+  "author": "matheusfigueiredo <matheussdev3@gmail.com>",
   "devDependencies": {
-    "prettier": "^3.5.3",
-    "@swc/cli": "^0.1.65",
-    "typescript": "^5.8.3",
+    "@eslint/js": "^9.28.0",
+    "@swc/cli": "0.7.7",
     "@swc/core": "^1.11.29",
-    "@iocx/tsconfig": "workspace:*",
-    "prettier-plugin-organize-imports": "^4.1.0"
+    "eslint": "^9.28.0",
+    "globals": "^16.2.0",
+    "prettier": "^3.5.3",
+    "prettier-plugin-organize-imports": "^4.1.0",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.33.1"
   },
   "packageManager": "pnpm@10.10.0"
 }

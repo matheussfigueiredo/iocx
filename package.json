@@ -1,19 +1,19 @@
 {
-  "name": "rpcx",
+  "name": "iocx",
   "version": "0.1.0",
   "description": "",
   "workspaces": [
     "packages/*"
   ],
   "scripts": {
-    "build": "pnpm --filter @rpcx/types build && pnpm --filter @rpcx/server build"
+    "build": "pnpm --filter @iocx/types build && pnpm --filter @iocx/server build"
   },
   "devDependencies": {
     "prettier": "^3.5.3",
     "@swc/cli": "^0.1.65",
     "typescript": "^5.8.3",
     "@swc/core": "^1.11.29",
-    "@rpcx/tsconfig": "workspace:*",
+    "@iocx/tsconfig": "workspace:*",
     "prettier-plugin-organize-imports": "^4.1.0"
   },
   "packageManager": "pnpm@10.10.0"

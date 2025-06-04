@@ -8,7 +8,7 @@ importers:
 
   .:
     devDependencies:
-      '@rpcx/tsconfig':
+      '@iocx/tsconfig':
         specifier: workspace:*
         version: link:packages/tsconfig
       '@swc/cli':
@@ -29,22 +29,22 @@ importers:
 
   packages/client:
     devDependencies:
-      '@rpcx/server':
-        specifier: workspace:*
-        version: link:../server
-      '@rpcx/tsconfig':
+      '@iocx/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
+      '@iocx/types':
+        specifier: workspace:*
+        version: link:../types
       typescript:
         specifier: ^5.8.3
         version: 5.8.3
 
   packages/server:
     devDependencies:
-      '@rpcx/tsconfig':
+      '@iocx/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
-      '@rpcx/types':
+      '@iocx/types':
         specifier: workspace:*
         version: link:../types
       typescript:
@@ -55,7 +55,7 @@ importers:
 
   packages/types:
     devDependencies:
-      '@rpcx/tsconfig':
+      '@iocx/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
       typescript:

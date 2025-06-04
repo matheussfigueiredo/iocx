@@ -1,5 +1,5 @@
 {
-  "name": "@rpcx/server",
+  "name": "@iocx/server",
   "version": "0.1.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -8,8 +8,8 @@
   },
   "devDependencies": {
     "typescript": "^5.8.3",
-    "@rpcx/types": "workspace:*",
-    "@rpcx/tsconfig": "workspace:*"
+    "@iocx/types": "workspace:*",
+    "@iocx/tsconfig": "workspace:*"
   },
   "packageManager": "pnpm@10.10.0"
 }

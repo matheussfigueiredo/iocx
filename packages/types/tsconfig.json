@@ -1,5 +1,5 @@
 {
-  "extends": "@rpcx/tsconfig/default.json",
+  "extends": "@iocx/tsconfig/default.json",
   "include": ["src"],
   "compilerOptions": {
     "declaration": true,

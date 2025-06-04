@@ -1,8 +1,8 @@
-import type { Context, Core, MaybePromise } from "@rpcx/types";
+import type { Context, Core, MaybePromise } from "@iocx/types";
 
 const CTX = Symbol("ctx");
 
-export class RPCX<C extends Context = {}> implements Core<C> {
+export class iocx<C extends Context = {}> implements Core<C> {
   private [CTX]: C;
 
   constructor(ctx: C) {
@@ -11,26 +11,26 @@ export class RPCX<C extends Context = {}> implements Core<C> {
 
   bind<NewC extends object>(
     factoryOrObject: NewC | ((args: { ctx: C }) => NewC),
-  ): RPCX<C & NewC> {
+  ): iocx<C & NewC> {
     const isFunction = typeof factoryOrObject === "function";
 
     const newBindings = isFunction
       ? factoryOrObject({ ctx: this[CTX] })
       : factoryOrObject;
 
-    return new RPCX({ ...this[CTX], ...newBindings });
+    return new iocx({ ...this[CTX], ...newBindings });
   }
 
   async bind_async<NewC extends object>(
     factory: (args: { ctx: C }) => MaybePromise<NewC>,
-  ): Promise<RPCX<C & Awaited<NewC>>> {
+  ): Promise<iocx<C & Awaited<NewC>>> {
     const newBindings = await factory({ ctx: this[CTX] });
-    return new RPCX({ ...this[CTX], ...newBindings });
+    return new iocx({ ...this[CTX], ...newBindings });
   }
 
-  static __extractContext<T extends RPCX<any>>(
+  static __extractContext<T extends iocx<any>>(
     r: T,
-  ): T extends RPCX<infer C> ? C : never {
+  ): T extends iocx<infer C> ? C : never {
     return (r as any)[CTX];
   }
 }

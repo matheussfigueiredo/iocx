@@ -9,6 +9,7 @@
   "devDependencies": {
     "typescript": "^5.8.3",
     "@iocx/types": "workspace:*",
+    "@iocx/server": "workspace:*",
     "@iocx/tsconfig": "workspace:*"
   },
   "packageManager": "pnpm@10.10.0"

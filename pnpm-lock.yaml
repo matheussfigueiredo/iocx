@@ -29,6 +29,9 @@ importers:
 
   packages/client:
     devDependencies:
+      '@iocx/server':
+        specifier: workspace:*
+        version: link:../server
       '@iocx/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig

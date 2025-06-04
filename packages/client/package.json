@@ -4,11 +4,10 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "swc src -d dist --copy-files --ignore */.{spec,test}.ts && tsc --project tsconfig.build.json"
+    "build": "tsc --project tsconfig.build.json && swc src -d dist --copy-files --ignore */.{spec,test}.ts"
   },
   "devDependencies": {
     "typescript": "^5.8.3",
-    "@iocx/types": "workspace:*",
     "@iocx/server": "workspace:*",
     "@iocx/tsconfig": "workspace:*"
   },

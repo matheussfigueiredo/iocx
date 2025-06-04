@@ -1,0 +1,10 @@
+{
+  "extends": "@rpcx/tsconfig/default.json",
+  "include": ["src"],
+  "compilerOptions": {
+    "declaration": true,
+    "declarationMap": true,
+    "emitDeclarationOnly": false,
+    "outDir": "dist"
+  }
+}

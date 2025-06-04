@@ -1,0 +1,4 @@
+{
+  "extends": "@rpcx/tsconfig/default.json",
+  "include": ["src"]
+}

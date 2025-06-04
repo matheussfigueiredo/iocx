@@ -1,0 +1,3 @@
+{
+  "extends": "@rpcx/tsconfig/default.json"
+}

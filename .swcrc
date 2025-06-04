@@ -3,7 +3,6 @@
   "jsc": {
     "parser": {
       "syntax": "typescript",
-      "jsx": true,
       "dynamicImport": true,
       "privateMethod": false,
       "functionBind": false,

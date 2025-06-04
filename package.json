@@ -6,9 +6,12 @@
   "publishConfig": {
     "access": "public"
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "lint": "eslint src/**/*.ts",
-    "build": "swc src -d dist --copy-files --strip-leading-paths --delete-dir-on-start --ignore */.{spec,test}.ts",
+    "build": "tsc --project tsconfig.build.json && swc ./src/*.ts --out-dir dist --ignore '**/*.{spec,test}.ts' --copy-files",
     "deploy": "npm version patch && npm publish --access public"
   },
   "license": "MIT",

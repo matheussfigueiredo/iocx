@@ -1,6 +1,6 @@
 import { IOCX } from "@iocx/server";
 
-export function createRPCXClient<R extends IOCX<any>>(
+export function createIOCXClient<R extends IOCX<any>>(
   router: R,
 ): {
   call: ReturnType<typeof IOCX.__extractContext>;

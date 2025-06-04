@@ -1,15 +1,17 @@
 {
   "name": "@iocx/client",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc --project tsconfig.build.json && swc src -d dist --copy-files --ignore */.{spec,test}.ts"
   },
+  "dependencies": {
+    "@iocx/types": "workspace:*"
+  },
   "devDependencies": {
     "typescript": "^5.8.3",
     "@iocx/server": "workspace:*",
-    "@iocx/types": "workspace:*",
     "@iocx/tsconfig": "workspace:*"
   },
   "packageManager": "pnpm@10.10.0"

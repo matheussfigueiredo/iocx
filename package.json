@@ -6,7 +6,7 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "pnpm --filter @iocx/types build && pnpm --filter @iocx/server build"
+    "build": "swc src -d dist --copy-files --strip-leading-paths --delete-dir-on-start --ignore */.{spec,test}.ts"
   },
   "devDependencies": {
     "prettier": "^3.5.3",

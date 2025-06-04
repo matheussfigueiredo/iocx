@@ -12,7 +12,7 @@
       "decorators": true,
       "decoratorsBeforeExport": false
     },
-    "target": "es2020",
+    "target": "es2022",
     "loose": false,
     "externalHelpers": false,
     "keepClassNames": false

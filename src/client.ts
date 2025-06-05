@@ -1,10 +1,27 @@
 import { IOCX } from "./server";
-import { Providers } from "./utils";
+import { ExtractContext, Providers } from "./utils";
 
 export function createIOCXClient<R extends IOCX<any>>(router: R) {
-  const ctx = IOCX.__extractContext(router);
+  const context = IOCX.__extractContext(router) as ExtractContext<R>;
+  const cache = new Map<keyof ExtractContext<R>, unknown>();
+
+  function get<K extends keyof ExtractContext<R>>(
+    key: K,
+  ): ExtractContext<R>[K] {
+    if (cache.has(key)) {
+      return cache.get(key) as ExtractContext<R>[K];
+    }
+
+    const target = context[key];
+    const instance = typeof target === "function" ? target() : target;
+
+    cache.set(key, instance);
+    return instance;
+  }
+
   return {
-    call: ctx,
+    call: context,
+    get,
   };
 }
 

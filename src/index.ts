@@ -1,1 +1,1 @@
-export * from "./client";
+export { createIOCXClient, initIOCX } from "./client";
